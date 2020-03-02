@@ -10,30 +10,30 @@ public class Human {
     private String name;
     private Date birthDate;
     private Address address;
-    @Data
-    protected class Address {
-        private Integer houseNumber;
-        private String street;
-        private Integer apartmentNumber;
-        private String town;
-        private String country;
+@Data
+protected class Address {
+    private Integer houseNumber;
+    private String street;
+    private Integer apartmentNumber;
+    private String town;
+    private String country;
 
-        Address() {
-            this.houseNumber = 0;
-            this.street = "";
-            this.apartmentNumber = 0;
-            this.town = "";
-            this.country = "";
-        }
-
-        Address(Integer houseNumber, String street, Integer apartmentNumber, String town, String country) {
-            this.houseNumber = houseNumber;
-            this.street = street;
-            this.apartmentNumber = apartmentNumber;
-            this.town = town;
-            this.country = country;
-        }
+    Address() {
+        this.houseNumber = 0;
+        this.street = "";
+        this.apartmentNumber = 0;
+        this.town = "";
+        this.country = "";
     }
+
+    Address(Integer houseNumber, String street, Integer apartmentNumber, String town, String country) {
+        this.houseNumber = houseNumber;
+        this.street = street;
+        this.apartmentNumber = apartmentNumber;
+        this.town = town;
+        this.country = country;
+    }
+}
 
     public Human() {
         this.id = idConst;// или ++idConst?
