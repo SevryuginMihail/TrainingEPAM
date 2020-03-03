@@ -65,14 +65,15 @@ protected class Address {
     }
 
     public static void main(String[] args) {// проверка работы
-        //Human human1 = new Human("Вася", 2000, 10, 22, 1, "Советская", 101, "Yalta", "RussiaFederation");
-        //System.out.println(human1);
-        Human human = new Human();
-        Human[] humans = new Human[10];
-        for(int i=0;i<humans.length;i++){
-            humans[i]=human.createRandomHuman();
-            System.out.println(humans[i]);
-        }
+//        //Human human1 = new Human("Вася", 2000, 10, 22, 1, "Советская", 101, "Yalta", "RussiaFederation");
+//        //System.out.println(human1);
+//        Human human = new Human();
+//        Human[] humans = new Human[10];
+//        for(int i=0;i<humans.length;i++){
+//            humans[i]=human.createRandomHuman();
+//            System.out.println(humans[i]);
+//        }
+
     }
 }
 
