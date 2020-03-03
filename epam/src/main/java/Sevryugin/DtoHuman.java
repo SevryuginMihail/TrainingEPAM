@@ -1,6 +1,7 @@
 package Sevryugin;
 
 import lombok.Data;
+
 import java.util.Date;
 
 @Data
@@ -10,6 +11,7 @@ public class DtoHuman {
     private String name;
     private Date birthDate;
     private DtoAddress dtoAddress;
+
     public DtoHuman() {
         this.id = idConst;// или ++idConst?
         this.name = "name";
@@ -23,6 +25,7 @@ public class DtoHuman {
         this.birthDate = new Date(year, month, date);
         this.dtoAddress = new DtoAddress(houseNumber, street, apartmentNumber, town, country);
     }
+
     @Data
     protected class DtoAddress {
         private Integer houseNumber;

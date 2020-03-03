@@ -1,23 +1,19 @@
 package Sevryugin;
-
 import lombok.Data;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Parameter;
-
 @Data
-public class Convertor<T, V> {
-    public void convert(T t, V v) throws IllegalAccessException {
-        System.out.println(t.getClass());
-        System.out.println(v.getClass());
-        Class classT = t.getClass();
-        Field[] fields = classT.getDeclaredFields();
-        for(Field field : fields){
-            String fieldName = field.getName();
-            if(!field.isAccessible()) field.setAccessible(true);
-            Object value = field.get(t);// значение поля
-            System.out.println(field +"\t -> "+fieldName+"\t -> "+value);
-        }
-        //return v;
+public class Convertor {
+    public Human convert(DtoHuman dtoHuman) {
+        Human human;
+        human = new Human(dtoHuman.getName(),dtoHuman.getBirthDate().getYear(),dtoHuman.getBirthDate().getMonth(),
+                dtoHuman.getBirthDate().getDate(),dtoHuman.getDtoAddress().getHouseNumber(),dtoHuman.getDtoAddress().getStreet(),
+                dtoHuman.getDtoAddress().getApartmentNumber(),dtoHuman.getDtoAddress().getTown(),dtoHuman.getDtoAddress().getCountry());
+        return human;
+    }
+    public DtoHuman convert(Human human){
+        DtoHuman dtoHuman;
+        dtoHuman = new DtoHuman(human.getName(),human.getBirthDate().getYear(),human.getBirthDate().getMonth(),human.getBirthDate().getDate(),
+                human.getAddress().getHouseNumber(),human.getAddress().getStreet(),human.getAddress().getApartmentNumber(),
+                human.getAddress().getTown(),human.getAddress().getCountry());
+        return dtoHuman;
     }
 }

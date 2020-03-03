@@ -1,14 +1,9 @@
 package Sevryugin;
 
 public class Service {
-    public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException {
-        Human human =new Human();
-        human = human.createRandomHuman();
-        DtoHuman dtoHuman = new DtoHuman();
-        Convertor<Human, DtoHuman> convertor = new Convertor<>();
-        System.out.println(human);
-        System.out.println();
-        //dtoHuman =
-                convertor.convert(human, dtoHuman);
+    public static void main(String[] args){
+        BD<Human> bd = new BD<>();// хранится Human
+        Convertor convertor = new Convertor();
+
     }
 }
