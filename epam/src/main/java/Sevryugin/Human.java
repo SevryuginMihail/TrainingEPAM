@@ -42,8 +42,8 @@ protected class Address {
         this.address = new Address();
     }
 
-    public Human(String name, int year, int month, int date, Integer houseNumber, String street, Integer apartmentNumber, String town, String country) {
-        this.id = ++idConst;
+    public Human(int id,String name, int year, int month, int date, Integer houseNumber, String street, Integer apartmentNumber, String town, String country) {
+        this.id = id;
         this.name = name;
         this.birthDate = new Date(year, month, date);
         this.address = new Address(houseNumber, street, apartmentNumber, town, country);
@@ -60,7 +60,7 @@ protected class Address {
         String townRandom[]={"Москва","Челябинск","Северодвинск","Одесса","Екатеринбург","Новосибирск","Караганда"};
         String country = "Россия";
         String n = nameRandom[(int)(random()*nameRandom.length)];
-        Human human = new Human(nameRandom[(int)(random()*nameRandom.length)],yearRandom,monthRandom,dateRandom,houseNumberRandom,streetRandom[(int)(random()*streetRandom.length)],apartmentNumberRandom,townRandom[(int)(random()*townRandom.length)],country);
+        Human human = new Human(this.id,nameRandom[(int)(random()*nameRandom.length)],yearRandom,monthRandom,dateRandom,houseNumberRandom,streetRandom[(int)(random()*streetRandom.length)],apartmentNumberRandom,townRandom[(int)(random()*townRandom.length)],country);
         return human;
     }
 
