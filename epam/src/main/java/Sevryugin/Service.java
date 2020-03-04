@@ -40,8 +40,12 @@ public class Service implements MetodsForBD<Human,DtoHuman>{
         Human human[] = new Human[humans.size()];
         for(int i=0;i<humans.size();i++)
             human[i]=humans.get(i);
-        DtoHuman dtoHuman[];
-        dtoHuman = convertor.convertMas(human);
+        DtoHuman dtoHuman[]= new DtoHuman[humans.size()];
+        for(int i=0;i<humans.size();i++) {
+            dtoHuman[i] = convertor.convert(human[i]);
+            System.out.println(dtoHuman[i]);
+        }
+        // dtoHuman = convertor.convertMas(human);
 
         return dtoHuman;
     }
