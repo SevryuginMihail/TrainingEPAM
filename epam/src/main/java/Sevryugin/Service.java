@@ -3,19 +3,19 @@ package Sevryugin;
 import lombok.Data;
 
 import java.util.LinkedList;
+
+import static java.lang.Math.random;
+
 @Data
 public class Service implements MetodsForBD<Human,DtoHuman>{
-    protected LinkedList<Human> humans = new LinkedList<>();
+    private LinkedList<Human> humans = new LinkedList<>();
     public static void main(String[] args){
-        Convertor convertor = new Convertor();
-        DtoHuman dtoHuman = new DtoHuman();
+        Service service = new Service();
         DtoHuman []dtoHumens = new DtoHuman[5];
         for(int i=0;i<dtoHumens.length;i++) {
-            dtoHumens[i] = dtoHuman.createRandomDtoHuman();
+            dtoHumens[i] = service.createRandomDtoHuman(i+1);
             System.out.println(dtoHumens[i]);
         }
-        // объект класса Service
-        Service service =new Service();
         // добавление одной сущности
         service.saveEntity(dtoHumens[0]);
         // вывод одной сущности
@@ -30,7 +30,7 @@ public class Service implements MetodsForBD<Human,DtoHuman>{
         Convertor convertor =new Convertor();
         DtoHuman dtoHuman;
         Human human = humans.get(i);
-        dtoHuman = convertor.convert(human);
+        dtoHuman = convertor.convertToDtoHuman(human);
         return dtoHuman;
     }
 
@@ -42,17 +42,15 @@ public class Service implements MetodsForBD<Human,DtoHuman>{
             human[i]=humans.get(i);
         DtoHuman dtoHuman[]= new DtoHuman[humans.size()];
         for(int i=0;i<humans.size();i++) {
-            dtoHuman[i] = convertor.convert(human[i]);
+            dtoHuman[i] = convertor.convertToDtoHuman(human[i]);
             System.out.println(dtoHuman[i]);
         }
-        // dtoHuman = convertor.convertMas(human);
-
         return dtoHuman;
     }
 
     public void saveEntity(DtoHuman entity) {
         Convertor convertor =new Convertor();
-        Human human = convertor.convert(entity);
+        Human human = convertor.convertToHuman(entity);
         System.out.println("сохранение одной сущности");
         System.out.println(human);
         humans.add(human);
@@ -62,8 +60,23 @@ public class Service implements MetodsForBD<Human,DtoHuman>{
         Convertor convertor =new Convertor();
         System.out.println("сохранение ввсех сущностей");
         for(int i=0;i<entitys.length;i++){
-            humans.add(convertor.convert(entitys[i]));
-            System.out.println(convertor.convert(entitys[i]));
+            humans.add(convertor.convertToHuman(entitys[i]));
+            System.out.println(convertor.convertToHuman(entitys[i]));
         }
+    }
+    public DtoHuman createRandomDtoHuman(int id) {
+        String nameRandom[] = {"Василий", "Петр", "Кирилл", "Алексей", "Роман", "Тихон","Герман"};// случайное имя
+        Integer yearRandom = 1800 + (int) (random() * 220);
+        Integer monthRandom = 1 + (int) (random() * 11);
+        Integer dateRandom = 1 +(int)(random()*28);
+        Integer houseNumberRandom = 1 + (int)(random()*1000);
+        String streetRandom[]={"Арбат","Фонтанка","Центральная","Молодежная","Школьная","Лесная","Садовая","Безымянная"};
+        Integer apartmentNumberRandom = 1 + (int)(random()*1000);
+        String townRandom[]={"Москва","Челябинск","Северодвинск","Одесса","Екатеринбург","Новосибирск","Караганда"};
+        String country = "Россия";
+        DtoHuman dtoHuman = new DtoHuman(id,nameRandom[(int)(random()*nameRandom.length)],yearRandom,monthRandom,dateRandom,
+                houseNumberRandom,streetRandom[(int)(random()*streetRandom.length)],apartmentNumberRandom,
+                townRandom[(int)(random()*townRandom.length)],country);
+        return dtoHuman;
     }
 }
