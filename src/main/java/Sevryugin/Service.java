@@ -1,6 +1,8 @@
 package Sevryugin;
 
 import lombok.Data;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.LinkedList;
 
@@ -9,28 +11,35 @@ import static java.lang.Math.random;
 @Data
 public class Service implements MetodsForBD<Human,DtoHuman>{
     private LinkedList<Human> humans = new LinkedList<Human>();
-    public static void main(String[] args){
-        Service service = new Service();
-        DtoHuman []dtoHumens = new DtoHuman[5];
-        for(int i=0;i<dtoHumens.length;i++) {
-            dtoHumens[i] = service.createRandomDtoHuman(i+1);
-            System.out.println(dtoHumens[i]);
-        }
-        // добавление одной сущности
-        service.saveEntity(dtoHumens[0]);
-        // вывод одной сущности
-        System.out.println(service.getEntity(0));
-        // добавление списка сущностей
-        service.saveAllEntity(dtoHumens);
-        // вывод всех сущностей
-        service.getAllEntity();
-    }
-    public DtoHuman getEntity(int i) {
+    private Logger fileAndConsoleLogger = LoggerFactory.getLogger(Service.class);
+    //    public static void main(String[] args){
+//        Service service = new Service();
+//        DtoHuman []dtoHumens = new DtoHuman[2];
+//        for(int i=0;i<dtoHumens.length;i++) {
+//            dtoHumens[i] = service.createRandomDtoHuman(i+1);
+//            System.out.println(dtoHumens[i]);
+//        }
+//        // добавление одной сущности
+//        service.saveEntity(dtoHumens[0]);
+//        // вывод одной сущности
+//        try {
+//            System.out.println(service.getEntity(0));
+//        } catch (EntityNotFound entityNotFound) {
+//            entityNotFound.printStackTrace();
+//        }
+//        // добавление списка сущностей
+//        service.saveAllEntity(dtoHumens);
+//        // вывод всех сущностей
+//        service.getAllEntity();
+//    }
+    public DtoHuman getEntity(int i) throws EntityNotFound{
         System.out.println("получение одной сущности");
+        if(i > humans.size()) throw new EntityNotFound("Нет сущности с таким индексом");
         Convertor convertor =new Convertor();
         DtoHuman dtoHuman;
         Human human = humans.get(i);
         dtoHuman = convertor.convertToDtoHuman(human);
+        fileAndConsoleLogger.info("Из бд получена сущность, id : "+dtoHuman.getId());
         return dtoHuman;
     }
 
@@ -51,16 +60,18 @@ public class Service implements MetodsForBD<Human,DtoHuman>{
     public void saveEntity(DtoHuman entity) {
         Convertor convertor =new Convertor();
         Human human = convertor.convertToHuman(entity);
-        System.out.println("сохранение одной сущности");
+        //System.out.println("сохранение одной сущности");
+        fileAndConsoleLogger.info("сохранение сущности , id : "+ human.getId());
         System.out.println(human);
         humans.add(human);
     }
 
     public void saveAllEntity(DtoHuman[] entitys) {
         Convertor convertor =new Convertor();
-        System.out.println("сохранение ввсех сущностей");
+        System.out.println("сохранение всех сущностей");
         for(int i=0;i<entitys.length;i++){
             humans.add(convertor.convertToHuman(entitys[i]));
+            fileAndConsoleLogger.info("сохранение сущности , id : " + entitys[i].getId());
             System.out.println(convertor.convertToHuman(entitys[i]));
         }
     }
