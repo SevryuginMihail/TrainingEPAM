@@ -12,7 +12,7 @@ import static java.lang.Math.random;
 public class Service implements MetodsForBD<Human,DtoHuman>{
     private LinkedList<Human> humans = new LinkedList<Human>();
     private Logger fileAndConsoleLogger = LoggerFactory.getLogger(Service.class);
-    //    public static void main(String[] args){
+//    public static void main(String[] args){
 //        Service service = new Service();
 //        DtoHuman []dtoHumens = new DtoHuman[2];
 //        for(int i=0;i<dtoHumens.length;i++) {
@@ -61,7 +61,7 @@ public class Service implements MetodsForBD<Human,DtoHuman>{
         Convertor convertor =new Convertor();
         Human human = convertor.convertToHuman(entity);
         //System.out.println("сохранение одной сущности");
-        fileAndConsoleLogger.info("сохранение сущности , id : "+ human.getId());
+        fileAndConsoleLogger.info("сохранение сущности , id : "+human.getId());
         System.out.println(human);
         humans.add(human);
     }
