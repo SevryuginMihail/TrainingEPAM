@@ -61,7 +61,7 @@ public class Service implements MetodsForBD<Human,DtoHuman>{
         Convertor convertor =new Convertor();
         Human human = convertor.convertToHuman(entity);
         //System.out.println("сохранение одной сущности");
-        fileAndConsoleLogger.info("сохранение сущности , id : "+human.getId());
+        fileAndConsoleLogger.info("сохранение сущности , id : "+ human.getId());
         System.out.println(human);
         humans.add(human);
     }
