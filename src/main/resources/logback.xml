@@ -30,11 +30,37 @@
         </rollingPolicy>
         <!---->
     </appender>
-
-    <logger name = "Sevryugin.Filter.Filter" level ="info" additivity="false">
+    <!-- Filter -->
+    <logger name = "Sevryugin.filter.Filter" level ="info" additivity="false">
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
     </logger>
+    <!-- AddCommand -->
+    <logger name = "Sevryugin.handlers.AddCommand" level ="info" additivity="false">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </logger>
+    <!-- DeleteCommand -->
+    <logger name = "Sevryugin.handlers.DeleteCommand" level ="info" additivity="false">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </logger>
+    <!-- ExitCommand -->
+    <logger name = "Sevryugin.handlers.ExitCommand" level ="info" additivity="false">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </logger>
+    <!-- PrintCommand -->
+    <logger name = "Sevryugin.handlers.PrintCommand" level ="info" additivity="false">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </logger>
+    <!-- MyFileReader -->
+    <logger name = "Sevryugin.utility.MyFileReader" level ="info" additivity="false">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </logger>
+
 
     <root level="info">
         <appender-ref ref="console"/>

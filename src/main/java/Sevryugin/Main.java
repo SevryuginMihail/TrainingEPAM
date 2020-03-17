@@ -1,6 +1,8 @@
 package Sevryugin;
 
-import Sevryugin.Filter.Filter;
+import Sevryugin.exception.CommandException;
+import Sevryugin.exception.WrongCommandException;
+import Sevryugin.filter.Filter;
 
 import java.util.Scanner;
 
@@ -12,7 +14,11 @@ public class Main {
         while (true) {
             System.out.println("Введите строку");
             string = scanner.nextLine();
-            filter.execute(string);
+            try{
+                filter.execute(string);
+            }catch (WrongCommandException | CommandException e){
+                System.out.println(e.getMessage());
+            }
         }
         //scanner.close();
     }
