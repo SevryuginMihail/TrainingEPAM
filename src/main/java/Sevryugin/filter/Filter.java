@@ -20,7 +20,7 @@ public class Filter {
 
     public Filter() {
         pattern = Pattern.compile("^" +
-                "|(delete\\s(\\w+|[1-9]+\\d*\\s\\w+(.txt)?))" +
+                "|(delete\\s(\\w+(.txt)?|[1-9]+\\d*\\s\\w+(.txt)?))" +
                 "|(print\\s(\\w+(.txt)?|[1-9]+\\d*\\s\\w+(.txt)?))" +
                 "|(add\\s(\\w+(.txt)?\\s\"\\w+\"|[1-9]+\\d*\\s\\w+(.txt)?\\s\"\\w*\"))" +
                 "|(exit)" +
@@ -51,5 +51,6 @@ public class Filter {
             fileLogger.info("Filter : строка : " + string + " не валидна");
             throw new WrongCommandException("Команда неверна: " + string);
         }
+        fileLogger.info("Filter : окончание работы Filter");
     }
 }

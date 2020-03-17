@@ -17,7 +17,7 @@ public class AddCommand implements CommandHandler {
         fileLogger.info("AddCommand : пришла команда : " + string);
         Scanner scanner = new Scanner(string);
         scanner.next();// проскочили слово команды
-        Integer lineInFile = 0;
+        int lineInFile = 0;
         boolean valueInFile = scanner.hasNextInt();
         if (valueInFile) {
             lineInFile = scanner.nextInt();

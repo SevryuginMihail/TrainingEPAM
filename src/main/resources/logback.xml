@@ -67,7 +67,11 @@
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
     </logger>
-
+    <!-- MyFilePrinter -->
+    <logger name = "Sevryugin.utility.MyFilePrinter" level ="info" additivity="false">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </logger>
 
 
 
