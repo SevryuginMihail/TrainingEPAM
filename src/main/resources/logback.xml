@@ -35,6 +35,7 @@
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
     </logger>
+
     <!-- AddCommand -->
     <logger name = "Sevryugin.handlers.AddCommand" level ="info" additivity="false">
         <appender-ref ref="console"/>
@@ -55,11 +56,20 @@
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
     </logger>
+
     <!-- MyFileReader -->
     <logger name = "Sevryugin.utility.MyFileReader" level ="info" additivity="false">
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
     </logger>
+    <!-- MyFileWriter -->
+    <logger name = "Sevryugin.utility.MyFileWriter" level ="info" additivity="false">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </logger>
+
+
+
 
 
     <root level="info">

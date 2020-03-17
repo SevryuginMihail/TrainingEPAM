@@ -20,9 +20,9 @@ public class Filter {
 
     public Filter() {
         pattern = Pattern.compile("^" +
-                "|(delete\\s(\\w+|[1-9]+\\d*\\s\\w+))" +
-                "|(print\\s(\\w+|[1-9]+\\d*\\s\\w+))" +
-                "|(add\\s(\\w+\\s\"\\w+\"|[1-9]+\\d*\\s\\w+\\s\"\\w*\"))" +
+                "|(delete\\s(\\w+|[1-9]+\\d*\\s\\w+(.txt)?))" +
+                "|(print\\s(\\w+(.txt)?|[1-9]+\\d*\\s\\w+(.txt)?))" +
+                "|(add\\s(\\w+(.txt)?\\s\"\\w+\"|[1-9]+\\d*\\s\\w+(.txt)?\\s\"\\w*\"))" +
                 "|(exit)" +
                 "|$");
         stringCommandNameHashMap = new HashMap<>();

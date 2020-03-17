@@ -7,6 +7,7 @@ public class ExitCommand implements CommandHandler {
     @Override
     public void execute(String string) throws CommandException {
         fileLogger.info("ExitCommand : пришла команда : " + string);
+        fileLogger.info("окончание работы программы");
         System.exit(0);
     }
 }
