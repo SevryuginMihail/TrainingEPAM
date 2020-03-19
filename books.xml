@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Books>
-    <book>
-        <author>
-            <firstName>Lev</firstName>
-            <secondName>Nikolayevich</secondName>
-            <lastName>Tolstoy</lastName>
-        </author>
-        <numberPages>960</numberPages>
-        <name>Anna Karenina</name>
-        <publisher>exmo</publisher>
-    </book>
-</Books>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Books><book><author><firstName>Lev</firstName><secondName>Nikolayevich</secondName><lastName>Tolstoy</lastName></author><numberPages>960</numberPages><name>Anna Karenina</name><publisher>exmo</publisher></book></Books>
