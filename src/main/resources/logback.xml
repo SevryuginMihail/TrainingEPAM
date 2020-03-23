@@ -32,12 +32,12 @@
     </appender>
 
     <!--MyClassLoader-->
-    <logger name = "Sevryugin.task3.MyClassLoader" level ="info" additivity="false">
+    <logger name="Sevryugin.task3.MyClassLoader" level="info" additivity="false">
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>
     <!--Main3-->
-    <logger name = "Sevryugin.task3.Main3" level ="info" additivity="false">
+    <logger name="Sevryugin.task3.Main3" level="info" additivity="false">
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>

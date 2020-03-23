@@ -10,15 +10,15 @@ public class Main3 {
         Class<?> clazz;
         try {
             clazz = myClassLoader.loadClass("TestClass");
-            log.info("загружен : "+clazz.getName()+".class");
+            log.info("загружен : " + clazz.getName() + ".class");
             Object object = clazz.newInstance();
             System.out.println(object);
         } catch (ClassNotFoundException e) {
-            log.error("Main3 : "+e.getMessage());
+            log.error("Main3 : " + e.getMessage());
         } catch (IllegalAccessException e) {
-            log.error("Main3 : "+e.getMessage());
+            log.error("Main3 : " + e.getMessage());
         } catch (InstantiationException e) {
-            log.error("Main3 : "+e.getMessage());
+            log.error("Main3 : " + e.getMessage());
         }
         System.out.println("конец работы программы");
     }
