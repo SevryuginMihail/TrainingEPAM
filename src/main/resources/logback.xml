@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- вывод в консоль -->
+    <appender name="console"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!-- вывод в файл -->
+    <appender name="fileLog"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/info.log.txt</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss} - %msg%n
+            </Pattern>
+        </encoder>
+        <!---->
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/info.%d{yyyy-MM-dd}.%i.log.txt</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <!---->
+    </appender>
+
+    <!--MyClassLoader-->
+    <logger name="Sevryugin.task3.MyClassLoader" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <!--Main3-->
+    <logger name="Sevryugin.task3.Main3" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <root level="info">
+        <appender-ref ref="console"/>
+    </root>
+</configuration>
