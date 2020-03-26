@@ -13,18 +13,13 @@ import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
-        // маленький ненужный кусок кода для отображения всех доступных файлов.txt (в корне проекта) для трех операций
-        // работает только при назывании файлов *.txt и повторного запуска программы
-        //  (файлы кидаются в корень проекта только после окончания работы программы(как я понял))
         Path currentRelativePath = Paths.get("");
         String s = ((Path) currentRelativePath).toAbsolutePath().toString();
-        //System.out.println("Current relative path is: " + s);
         File dir = new File(s);
         Pattern pattern = Pattern.compile("\\w*(.txt)");
         File[] lst1;
         boolean checkTxt = false;
 
-        // непосредственно сам код задания
         Scanner scanner = new Scanner(System.in);
         Filter filter = new Filter();
         String string;
@@ -32,8 +27,8 @@ public class Main {
 
             try {
                 lst1 = dir.listFiles();
-                for(File f : lst1){
-                    if(pattern.matcher(f.getName()).matches()) {
+                for (File f : lst1) {
+                    if (pattern.matcher(f.getName()).matches()) {
                         if (!checkTxt) {
                             System.out.println("файлы с расширением .txt");
                             checkTxt = true;
@@ -41,19 +36,18 @@ public class Main {
                         System.out.println(f.getName());
                     }
                 }
-            }catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 System.out.println(" ");// заглушка
             }
 
 
             System.out.println("Введите строку");
             string = scanner.nextLine();
-            try{
+            try {
                 filter.execute(string);
-            }catch (WrongCommandException | CommandException e){
+            } catch (WrongCommandException | CommandException e) {
                 System.out.println(e.getMessage());
             }
         }
-        //scanner.close();
     }
 }

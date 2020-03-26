@@ -11,9 +11,9 @@ public class MyFilePrinter {
     public static void printFile(String fileName) throws CommandException {
         log.info("MyFilePrinter : осуществляется печать в консоль файла : " + fileName);
         File myFile = new File(fileName);
-        if(!myFile.exists()){
-            log.error("MyFilePrinter : файла с названием : "+fileName +" не существует");
-            throw new CommandException("MyFilePrinter : файла с названием : "+fileName +" не существует");
+        if (!myFile.exists()) {
+            log.error("MyFilePrinter : файла с названием : " + fileName + " не существует");
+            throw new CommandException("MyFilePrinter : файла с названием : " + fileName + " не существует");
         }
         List<String> lines = MyFileReader.parseFileToString(fileName);
         for (String line : lines) {
@@ -25,9 +25,9 @@ public class MyFilePrinter {
     public static void printLineFromFile(String fileName, int line) throws CommandException {
         log.info("MyFilePrinter : осуществляется печать в консоль строки : " + line + " файла : " + fileName);
         File myFile = new File(fileName);
-        if(!myFile.exists()){
-            log.error("MyFilePrinter : файла с названием : "+fileName +" не существует");
-            throw new CommandException("MyFilePrinter : файла с названием : "+fileName +" не существует");
+        if (!myFile.exists()) {
+            log.error("MyFilePrinter : файла с названием : " + fileName + " не существует");
+            throw new CommandException("MyFilePrinter : файла с названием : " + fileName + " не существует");
         }
         List<String> lines = MyFileReader.parseFileToString(fileName);
         try {
