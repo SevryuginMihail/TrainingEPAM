@@ -3,6 +3,9 @@ package Sevryugin.task1;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Класс выбрасывать java.lang.OutOfMemoryError
+ */
 public class Main1 {
     static final List<Object[]> arrays = new LinkedList<>();
 
