@@ -6,8 +6,17 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.List;
 
+/**
+ * Класс реализует логику записи в файл строки
+ */
 @Slf4j
 public class MyFileWriter {
+    /**
+     * Метод производит запись в файл строк
+     *
+     * @param fileName - название файла
+     * @param lines    - строки для записи в файл
+     */
     public static void writeFile(String fileName, List<String> lines) {
         log.info("MyFileWriter : осуществляется запись в файл : " + fileName);
         try (BufferedWriter bout = new BufferedWriter(new FileWriter(fileName, false))) {

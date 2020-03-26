@@ -7,13 +7,22 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 
+/**
+ * Класс реализует обработчик команды "печать из файла"
+ */
 public class PrintCommand implements CommandHandler {
     private Logger fileLogger = LoggerFactory.getLogger(Sevryugin.handlers.PrintCommand.class);
 
+    /**
+     * Метод производит вывод в консоль части файла слгласно пришедшей команде
+     *
+     * @param command - обрабатываемая команда
+     * @throws CommandException - ошибка работы с файлом
+     */
     @Override
-    public void execute(String string) throws CommandException {
-        fileLogger.info("PrintCommand : пришла команда : " + string);
-        Scanner scanner = new Scanner(string);
+    public void execute(String command) throws CommandException {
+        fileLogger.info("PrintCommand : пришла команда : " + command);
+        Scanner scanner = new Scanner(command);
         scanner.next();
         int lineInFile = 0;
         boolean valueInFile = scanner.hasNextInt();

@@ -10,6 +10,9 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/**
+ * Класс реализует выполнение входной команды по работе с файлом
+ */
 public class Main {
     public static void main(String[] args) {
         Path currentRelativePath = Paths.get("");

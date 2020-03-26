@@ -10,13 +10,22 @@ import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Класс реализует обработчик команды "удаление строки"
+ */
 public class DeleteCommand implements CommandHandler {
     private Logger fileLogger = LoggerFactory.getLogger(Sevryugin.handlers.DeleteCommand.class);
 
+    /**
+     * Метод реализует удаление строки
+     *
+     * @param command - обрабатываемая команда
+     * @throws CommandException - не удалась работа с файлом
+     */
     @Override
-    public void execute(String string) throws CommandException {
-        fileLogger.info("DeleteCommand : пришла команда : " + string);
-        Scanner scanner = new Scanner(string);
+    public void execute(String command) throws CommandException {
+        fileLogger.info("DeleteCommand : пришла команда : " + command);
+        Scanner scanner = new Scanner(command);
         scanner.next();
         int lineInFile = 0;
         boolean valueInFile = scanner.hasNextInt();

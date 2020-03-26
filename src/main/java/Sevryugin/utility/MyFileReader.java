@@ -7,17 +7,25 @@ import java.util.List;
 import Sevryugin.exception.CommandException;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Класс реализует логику по чтению из файла
+ */
 @Slf4j
 public class MyFileReader {
+    /**
+     * Метод переводит файл в массив строк
+     *
+     * @param fileName - название файла
+     * @return - массив строк
+     * @throws CommandException - оштбка работы с файлом
+     */
     public static List<String> parseFileToString(String fileName) throws CommandException {
-        File myFile = new File(fileName);// без директории
+        File myFile = new File(fileName);
         List<String> lines = new ArrayList<>();
-        // если файл есть, все хорошо, если его нет - моздается
         if (myFile.exists()) {
             log.info("MyFileReader : файл с таким названием существует");
         } else {
             log.warn("MyFileReader : файл с таким названием не существует");
-            //throw new CommandException("файл с таким названием не существует");
             try {
                 if (myFile.createNewFile()) {
                     log.info("MyFileReader : файл с таким названием успешно создан");
