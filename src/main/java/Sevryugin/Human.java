@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * POJO класс - сущность Human
+ */
 @Data
 public class Human {
     private Integer id;

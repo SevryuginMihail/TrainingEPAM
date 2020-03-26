@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * POJO класс - сущность DtoHuman
+ */
 @Data
 public class DtoHuman {
     private Integer id;
@@ -12,7 +15,7 @@ public class DtoHuman {
     private DtoAddress dtoAddress;
 
     public DtoHuman() {
-        this.id = 0;// или ++idConst?
+        this.id = 0;
         this.name = "name";
         this.birthDate = new Date();
         this.dtoAddress = new DtoAddress();

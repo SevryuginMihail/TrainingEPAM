@@ -1,5 +1,8 @@
 package Sevryugin;
 
+/**
+ * Класс реализует работу по добавлению и получению сущности HumanDto из псевдо базы данных
+ */
 public class Main {
     public static void main(String[] args) {
         Service service = new Service();
@@ -8,17 +11,13 @@ public class Main {
             dtoHumens[i] = service.createRandomDtoHuman(i + 1);
             System.out.println(dtoHumens[i]);
         }
-        // добавление одной сущности
         service.saveEntity(dtoHumens[0]);
-        // вывод одной сущности
         try {
             System.out.println(service.getEntity(0));
         } catch (EntityNotFound entityNotFound) {
             entityNotFound.printStackTrace();
         }
-        // добавление списка сущностей
         service.saveAllEntity(dtoHumens);
-        // вывод всех сущностей
         service.getAllEntity();
     }
 }

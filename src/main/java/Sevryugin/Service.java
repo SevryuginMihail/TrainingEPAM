@@ -8,11 +8,21 @@ import java.util.LinkedList;
 
 import static java.lang.Math.random;
 
+/**
+ * Класс реализующий методы доступа к псевдо базе данных
+ */
 @Data
 public class Service implements MetodsForBD<Human, DtoHuman> {
     private LinkedList<Human> humans = new LinkedList<Human>();
     private Logger fileAndConsoleLogger = LoggerFactory.getLogger(Service.class);
 
+    /**
+     * Метод возвращает 1 сущность по ее id
+     *
+     * @param i - номер получаемой сущности
+     * @return - возвращает объект класса HumanDto
+     * @throws EntityNotFound - сущность не найдена
+     */
     public DtoHuman getEntity(int i) throws EntityNotFound {
         System.out.println("получение одной сущности");
         if (i > humans.size()) throw new EntityNotFound("Нет сущности с таким индексом");
@@ -24,6 +34,11 @@ public class Service implements MetodsForBD<Human, DtoHuman> {
         return dtoHuman;
     }
 
+    /**
+     * Метод возвращает все сущности из бд
+     *
+     * @return - возвращает все сущности из бд
+     */
     public DtoHuman[] getAllEntity() {
         System.out.println("вывод всех сущностей");
         Convertor convertor = new Convertor();
@@ -38,6 +53,11 @@ public class Service implements MetodsForBD<Human, DtoHuman> {
         return dtoHuman;
     }
 
+    /**
+     * Метод добавляет сущность в бд
+     *
+     * @param entity - передаваемая сущность
+     */
     public void saveEntity(DtoHuman entity) {
         Convertor convertor = new Convertor();
         Human human = convertor.convertToHuman(entity);
@@ -46,6 +66,11 @@ public class Service implements MetodsForBD<Human, DtoHuman> {
         humans.add(human);
     }
 
+    /**
+     * Метод передает в бд массив сущностей
+     *
+     * @param entitys - передаваемые сущности
+     */
     public void saveAllEntity(DtoHuman[] entitys) {
         Convertor convertor = new Convertor();
         System.out.println("сохранение всех сущностей");
@@ -56,6 +81,12 @@ public class Service implements MetodsForBD<Human, DtoHuman> {
         }
     }
 
+    /**
+     * Метод возвращает новую сущность
+     *
+     * @param id - id сущности
+     * @return - созданная сущность
+     */
     public DtoHuman createRandomDtoHuman(int id) {
         String nameRandom[] = {"Василий", "Петр", "Кирилл", "Алексей", "Роман", "Тихон", "Герман"};// случайное имя
         Integer yearRandom = 1800 + (int) (random() * 220);
