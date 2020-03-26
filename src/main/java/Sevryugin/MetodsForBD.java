@@ -1,11 +1,11 @@
 package Sevryugin;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+public interface MetodsForBD<T1, T2> {
+    public T2 getEntity(int i);
 
-public interface MetodsForBD<T,V> {
-    public V getEntity(int i);
-    public V[] getAllEntity();
-    public void saveEntity(V entity);
-    public void saveAllEntity(V[] entitys);
+    public T2[] getAllEntity();
+
+    public void saveEntity(T2 entity);
+
+    public void saveAllEntity(T2[] entitys);
 }

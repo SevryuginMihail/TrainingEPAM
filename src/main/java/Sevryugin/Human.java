@@ -1,16 +1,16 @@
 package Sevryugin;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import static java.lang.Math.random;
+
 @Data
 public class Human {
     private Integer id;
     private String name;
     private Date birthDate;
     private Address address;
+
     @Data
     protected class Address {
         private Integer houseNumber;
@@ -43,7 +43,7 @@ public class Human {
         this.address = new Address();
     }
 
-    public Human(int id,String name, int year, int month, int date, Integer houseNumber, String street, Integer apartmentNumber, String town, String country) {
+    public Human(int id, String name, int year, int month, int date, Integer houseNumber, String street, Integer apartmentNumber, String town, String country) {
         this.id = id;
         this.name = name;
         this.birthDate = new Date(year, month, date);
