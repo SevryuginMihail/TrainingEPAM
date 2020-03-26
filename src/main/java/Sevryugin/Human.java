@@ -3,6 +3,9 @@ package Sevryugin;
 import lombok.Data;
 
 @Data
+/**
+ * POJO класс Human
+ */
 public class Human {
     private String fio;
     private Integer age;
