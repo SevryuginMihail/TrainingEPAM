@@ -8,20 +8,23 @@ import javax.xml.stream.XMLStreamReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+/**
+ * Данный класс реализует технологию парсера STAX для логгирования XML документа в файл
+ */
 @Slf4j
 public class StaxParser {
     public static void main(String[] args) {
-        final String fileName="plant_catalog.xml";
-        try{
-            XMLStreamReader xmlr = XMLInputFactory.newInstance().createXMLStreamReader(fileName,new FileInputStream(fileName));
-            while(xmlr.hasNext()){
+        final String fileName = "plant_catalog.xml";
+        try {
+            XMLStreamReader xmlr = XMLInputFactory.newInstance().createXMLStreamReader(fileName, new FileInputStream(fileName));
+            while (xmlr.hasNext()) {
                 xmlr.next();
-                if(xmlr.isStartElement()){
+                if (xmlr.isStartElement()) {
                     log.info(xmlr.getLocalName());
-                }else if(xmlr.isEndElement()){
-                    log.info("/"+xmlr.getLocalName());
-                }else if(xmlr.hasText() && xmlr.getText().trim().length() > 0){
-                    log.info("    "+xmlr.getText());
+                } else if (xmlr.isEndElement()) {
+                    log.info("/" + xmlr.getLocalName());
+                } else if (xmlr.hasText() && xmlr.getText().trim().length() > 0) {
+                    log.info("    " + xmlr.getText());
                 }
             }
             System.out.println("stax разбор успешно завершен");
