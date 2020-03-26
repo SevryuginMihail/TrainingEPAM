@@ -2,6 +2,10 @@ package Sevryugin.task3;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Класс реализует создание объекта класса TestClass, байткод котороно лежит в папке myClasses,
+ * с помощью собственной реализации загрузчика классов MyClassLoader
+ */
 @Slf4j
 public class Main3 {
     public static void main(String[] args) {

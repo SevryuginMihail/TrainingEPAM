@@ -4,6 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 
+/**
+ * Класс реализует кастомный загрузчик классов
+ */
 @Slf4j
 public class MyClassLoader extends ClassLoader {
     private String classPath;
@@ -12,6 +15,13 @@ public class MyClassLoader extends ClassLoader {
         this.classPath = path;
     }
 
+    /**
+     * Метод получает на вход путь к класса, возвращает объект типа класс
+     *
+     * @param name - название класса
+     * @return - объет типа Class
+     * @throws ClassNotFoundException - класс с таким именем не найден
+     */
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         File f = new File(classPath + "\\" + name + ".class");

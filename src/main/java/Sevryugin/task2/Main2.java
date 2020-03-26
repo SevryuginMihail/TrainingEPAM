@@ -1,5 +1,8 @@
 package Sevryugin.task2;
 
+/**
+ * Класс выбрасывать java.lang.StackOverflowError
+ */
 public class Main2 {
     public static void main(String[] args) {
         genStackOverFlowError("by");
