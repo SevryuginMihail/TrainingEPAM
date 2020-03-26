@@ -9,14 +9,23 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Класс реализует обработчик команды "добавление строки"
+ */
 public class AddCommand implements CommandHandler {
     private Logger fileLogger = LoggerFactory.getLogger(Sevryugin.handlers.AddCommand.class);
 
+    /**
+     * Метод добавляет строку в файл
+     *
+     * @param command - обрабатываемая команда
+     * @throws CommandException - ошибка чтения файла
+     */
     @Override
-    public void execute(String string) throws CommandException {
-        fileLogger.info("AddCommand : пришла команда : " + string);
-        Scanner scanner = new Scanner(string);
-        scanner.next();// проскочили слово команды
+    public void execute(String command) throws CommandException {
+        fileLogger.info("AddCommand : пришла команда : " + command);
+        Scanner scanner = new Scanner(command);
+        scanner.next();
         int lineInFile = 0;
         boolean valueInFile = scanner.hasNextInt();
         if (valueInFile) {
