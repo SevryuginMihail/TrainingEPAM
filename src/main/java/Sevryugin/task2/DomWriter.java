@@ -14,8 +14,11 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 
+/**
+ * Класс создает XML документ и заполняет его, используя технологию DOM
+ */
 public class DomWriter {
-    public static void createXML(){
+    public static void createXML() {
         try {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
@@ -54,7 +57,7 @@ public class DomWriter {
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource domSource = new DOMSource(document);
             StreamResult streamResult = new StreamResult(new File("books.xml"));
-            transformer.transform(domSource,streamResult);
+            transformer.transform(domSource, streamResult);
             System.out.println("XML файл записан");
             System.out.println("books.xml");
         } catch (ParserConfigurationException | TransformerConfigurationException e) {
