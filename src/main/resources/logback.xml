@@ -30,16 +30,16 @@
         </rollingPolicy>
     </appender>
 
-    <logger name = "Sevryugin.Convertor" level ="info" additivity="false">
+    <logger name="Sevryugin.Convertor" level="info" additivity="false">
         <appender-ref ref="console"/>
     </logger>
 
-    <logger name = "Sevryugin.Service" level ="info" additivity="false">
+    <logger name="Sevryugin.Service" level="info" additivity="false">
         <appender-ref ref="file"/>
         <appender-ref ref="console"/>
     </logger>
 
-    <logger name = "Sevryugin.Main" level = "info" additivity="false">
+    <logger name="Sevryugin.Main" level="info" additivity="false">
         <appender-ref ref="file"/>
     </logger>
 
