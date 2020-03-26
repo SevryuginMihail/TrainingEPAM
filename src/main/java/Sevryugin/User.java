@@ -4,11 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-enum Rule{
-    ADMIN,
-    USER,
-    MODERATOR
-};
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
