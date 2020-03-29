@@ -25,7 +25,7 @@ public class Ship implements Transport {
                 '}';
     }
 
-    public void deliver() {
-        System.out.println("доставка лодкой");
+    public String deliver() {
+        return "доставка лодкой";
     }
 }

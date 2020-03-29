@@ -25,7 +25,7 @@ public class Car implements Transport {
                 '}';
     }
 
-    public void deliver() {
-        System.out.println("доставка машиной");
+    public String deliver() {
+        return "доставка машиной";
     }
 }

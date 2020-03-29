@@ -19,7 +19,8 @@ public class MainFactoryMethod {
 
     public static void configure() {
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("src\\main\\java\\Sevryugin\\creational\\factory_method\\properties.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("src\\main\\resources\\propertiesFactoryMethod.txt"));
+            log.info(" ");
             String s = bufferedReader.readLine();
             log.info("прочитана строка : " + s);
             if (s.equals("car")) {
@@ -39,6 +40,6 @@ public class MainFactoryMethod {
     }
 
     public static void work() {
-        logistics.createTransport().deliver();
+        log.info(logistics.createTransport().deliver());
     }
 }
