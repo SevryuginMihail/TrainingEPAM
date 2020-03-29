@@ -31,12 +31,16 @@
         <!---->
     </appender>
 
-    <!--Main_factory_method-->
+    <!--MainFactoryMethod-->
     <logger name="Sevryugin.creational.factory_method.MainFactoryMethod" level="info" additivity="false">
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>
-
+    <!--MainAbstractFactory-->
+    <logger name="Sevryugin.creational.abstract_factory.MainAbstractFactory" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
     <root level="info">
         <appender-ref ref="console"/>
     </root>
