@@ -46,6 +46,11 @@
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>
+    <!--MainBrigde-->
+    <logger name="Sevryugin.structural.bridge.MainBridge" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
     <root level="info">
         <appender-ref ref="console"/>
     </root>
