@@ -31,8 +31,28 @@
         <!---->
     </appender>
 
-    <!--HelloWorld-->
-    <logger name="Sevryugin.HelloWorld" level="info" additivity="false">
+    <!--MainFactoryMethod-->
+    <logger name="Sevryugin.creational.factory_method.MainFactoryMethod" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <!--MainAbstractFactory-->
+    <logger name="Sevryugin.creational.abstract_factory.MainAbstractFactory" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <!--MainAdapter-->
+    <logger name="Sevryugin.structural.adapter.MainAdapter" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <!--MainBrigde-->
+    <logger name="Sevryugin.structural.bridge.MainBridge" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <!--MainStrategy-->
+    <logger name="Sevryugin.behavioral.strategy.MainStrategy" level="info" additivity="false">
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>
