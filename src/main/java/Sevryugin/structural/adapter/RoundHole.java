@@ -25,7 +25,7 @@ public class RoundHole {
                 '}';
     }
 
-    public boolean fits(RoundPeg peg){
+    public boolean fits(RoundPeg peg) {
         return this.radius >= peg.getRadius();
     }
 }

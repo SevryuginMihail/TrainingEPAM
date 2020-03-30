@@ -47,7 +47,7 @@ public class TV implements Device {
     @Override
     public void setVolume(int percent) {
         this.volume = percent;
-        log.info("TV : " + this.name + " volume = "+this.volume);
+        log.info("TV : " + this.name + " volume = " + this.volume);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class TV implements Device {
     @Override
     public void setChannel(int channel) {
         this.channel = channel;
-        log.info("TV : " + this.name + " channel = "+this.channel);
+        log.info("TV : " + this.name + " channel = " + this.channel);
     }
 
     @Override
