@@ -1,0 +1,31 @@
+2020-04-02 22:29:13 - Main : у класса : class Sevryugin.pojo.Human есть @Entity
+2020-04-02 23:01:35 -  
+2020-04-02 23:02:15 -  
+2020-04-02 23:02:55 -  
+2020-04-02 23:29:31 -  
+2020-04-02 23:29:31 - у Sevryugin.pojo.Human есть @Entity
+2020-04-02 23:29:31 - у : Sevryugin.pojo.Human нет поля с @Value
+2020-04-02 23:30:18 -  
+2020-04-02 23:30:18 - у Sevryugin.pojo.Human есть @Entity
+2020-04-02 23:30:18 - у : Sevryugin.pojo.Human нет поля с @Value
+2020-04-02 23:31:22 -  
+2020-04-02 23:31:22 - у Sevryugin.pojo.Human есть @Entity
+2020-04-02 23:31:22 - у : Sevryugin.pojo.Human есть хотя бы одно поле с @Value
+2020-04-02 23:31:22 - у Sevryugin.pojo.Car нет @Entity
+2020-04-02 23:31:22 - у Sevryugin.pojo.Car нет поля с @Value
+2020-04-02 23:32:03 -  
+2020-04-02 23:32:03 - у Sevryugin.pojo.Human есть @Entity
+2020-04-02 23:32:03 - у : Sevryugin.pojo.Human есть хотя бы одно поле с @Value
+2020-04-02 23:32:03 - у Sevryugin.pojo.Car нет @Entity
+2020-04-02 23:32:03 - у Sevryugin.pojo.Car есть хотя бы одно поле с @Value
+2020-04-02 23:33:12 -  
+2020-04-02 23:33:12 - у Sevryugin.pojo.Human есть @Entity
+2020-04-02 23:33:12 - у : Sevryugin.pojo.Human есть хотя бы одно поле с @Value
+2020-04-02 23:33:12 - у Sevryugin.pojo.Car нет @Entity
+2020-04-02 23:33:12 - у Sevryugin.pojo.Car нет поля с @Value
+2020-04-02 23:42:24 -  
+2020-04-02 23:42:24 - Human{age=0, name='null'}
+2020-04-02 23:42:24 - у Sevryugin.pojo.Human есть @Entity
+2020-04-02 23:42:24 - у : Sevryugin.pojo.Human есть хотя бы одно поле с @Value
+2020-04-02 23:42:24 - у Sevryugin.pojo.Car нет @Entity
+2020-04-02 23:42:24 - у Sevryugin.pojo.Car нет поля с @Value
