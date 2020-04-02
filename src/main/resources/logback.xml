@@ -31,8 +31,11 @@
         <!---->
     </appender>
 
-    <!--HelloWorld-->
-    <logger name="Sevryugin.HelloWorld" level="info" additivity="false">
+    <logger name="Sevryugin.Main" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <logger name="Sevryugin.Service" level="info" additivity="false">
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>
