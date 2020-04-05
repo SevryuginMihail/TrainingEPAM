@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.nio.file.Paths;
 
 public class MyTree {
     private static final Logger log = LoggerFactory.getLogger(MyTree.class);
@@ -12,7 +13,7 @@ public class MyTree {
         //MyTree tree = new MyTree();
         //System.out.println(Paths.get("").toAbsolutePath().toString());// абсолютный путь проекта
         //fileInfo("D:\\Games");// данные об объекте по введенному пути
-        recurs(0,"D:\\example");
+        recurs(0, "D:\\Users\\misas\\IdeaProjects\\TrainingEPAM");
     }
 
     /**
@@ -26,28 +27,23 @@ public class MyTree {
                 if(file!=null) {
                     fileInfo(spaceCount + 1, file.getAbsolutePath());
                     System.out.println();
-                    recurs(spaceCount++, file.getAbsolutePath());
+                    recurs(spaceCount + 1, file.getAbsolutePath());
                 }
             }
         }
     }
 
-//    public void dirInfo(String filePath) {
-//        File dir = new File(filePath);
-//        System.out.println(dir.getAbsolutePath());
-//        File[] list1 = dir.listFiles();
-//        for (File file : list1) {
-//            //fileInfo(file.getAbsolutePath());
-//            System.out.println();
-//        }
-//    }
-
+    /**
+     * Метод показывает минимальную информацию об объекте
+     * @param spaceCount - количество отступов для правильного отображения
+     * @param filePath
+     */
     public static void fileInfo(Integer spaceCount, String filePath) {
         File file = new File(filePath);
         if (file.exists()) {
             // пробелы для удобного представления дерева
             for(int i=0;i<spaceCount;i++)
-                System.out.print(" ");
+                System.out.print("  ");
             System.out.print(file.getName());
             System.out.print(" ");
             if (file.isDirectory())
@@ -71,6 +67,8 @@ public class MyTree {
             } else {
                 System.out.print("-");
             }
+            if(file.isDirectory())
+                System.out.print(":");
         }
     }
 
