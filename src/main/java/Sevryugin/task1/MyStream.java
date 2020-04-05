@@ -5,10 +5,13 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -60,5 +63,24 @@ public class MyStream {
             log.info(e.getMessage());
         }
         return count;
+    }
+
+    /**
+     * Метод возвращает дату конца света
+     *
+     * @param count - входящее четырехзначное значение
+     */
+    public void findEndOfTheWorld(Long count) {
+        Long days = count % 100;
+        Long months = count / 100;
+        LocalDateTime localDateTime;
+        localDateTime = LocalDateTime.parse(
+                LocalDateTime.now()
+                        .plusMonths(months)
+                        .plusDays(days)
+                        .atZone(ZoneId.of("America/Los_Angeles"))
+                        .toLocalDateTime()
+                        .format(DateTimeFormatter.ISO_DATE_TIME));
+        log.info("дата конца света : {}", localDateTime);
     }
 }
