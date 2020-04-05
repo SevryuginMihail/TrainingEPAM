@@ -9,7 +9,7 @@ public class MyTree {
     private static final Logger log = LoggerFactory.getLogger(MyTree.class);
 
     public static void main(String[] args) {
-        MyTree tree = new MyTree();
+        //MyTree tree = new MyTree();
         //System.out.println(Paths.get("").toAbsolutePath().toString());// абсолютный путь проекта
         //fileInfo("D:\\Games");// данные об объекте по введенному пути
         recurs(0,"D:\\example");
@@ -21,11 +21,13 @@ public class MyTree {
     public static void recurs(Integer spaceCount, String filePath) {
         File rootFile = new File(filePath);
         File[] files = rootFile.listFiles();
-        for (File file : files) {
-            if(file!=null) {
-                fileInfo(spaceCount + 1, file.getAbsolutePath());
-                System.out.println();
-                recurs(spaceCount++, file.getAbsolutePath());
+        if (files != null) {
+            for (File file : files) {
+                if(file!=null) {
+                    fileInfo(spaceCount + 1, file.getAbsolutePath());
+                    System.out.println();
+                    recurs(spaceCount++, file.getAbsolutePath());
+                }
             }
         }
     }
@@ -69,8 +71,6 @@ public class MyTree {
             } else {
                 System.out.print("-");
             }
-        } else {
-
         }
     }
 
