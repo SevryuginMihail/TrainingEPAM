@@ -30,9 +30,15 @@
         </rollingPolicy>
         <!---->
     </appender>
-
-    <!--HelloWorld-->
-    <logger name="Sevryugin.HelloWorld" level="info" additivity="false">
+    <logger name="Sevryugin.Main" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <logger name="Sevryugin.task1.MyStream" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <logger name="Sevryugin.task3.MyTree" level="info" additivity="false">
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>
