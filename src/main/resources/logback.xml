@@ -36,7 +36,16 @@
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>
-
+    <!--MainTaskOne-->
+    <logger name="Sevryugin.task1.MainTaskOne" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <!--MainTaskTwo-->
+    <logger name="Sevryugin.task2.MainTaskTwo" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
     <root level="info">
         <appender-ref ref="console"/>
     </root>
