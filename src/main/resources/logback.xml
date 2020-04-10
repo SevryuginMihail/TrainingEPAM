@@ -31,18 +31,21 @@
         <!---->
     </appender>
 
-    <!--Main-->
-    <logger name="Sevryugin.Main" level="info" additivity="false">
+    <!--task1-->
+    <logger name="Sevryugin.task1.MainOneRaceConditional" level="info" additivity="false">
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>
-    <!--MainTaskOne-->
-    <logger name="Sevryugin.task1.MainTaskOne" level="info" additivity="false">
+    <logger name="Sevryugin.task1.MainOneDeadlock" level="info" additivity="false">
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>
-    <!--MainTaskTwo-->
-    <logger name="Sevryugin.task2.MainTaskTwo" level="info" additivity="false">
+    <!--task2-->
+    <logger name="Sevryugin.task2.MainTwoRaceConditional" level="info" additivity="false">
+        <appender-ref ref="fileLog"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <logger name="Sevryugin.task2.MainTwoDeadlock" level="info" additivity="false">
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>

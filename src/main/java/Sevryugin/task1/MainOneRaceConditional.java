@@ -3,12 +3,15 @@ package Sevryugin.task1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MainTaskOne {
-    private static final Logger log = LoggerFactory.getLogger(MainTaskOne.class);
+/**
+ * Кдасс реализует пробдемму race conditional
+ */
+public class MainOneRaceConditional {
+    private static final Logger log = LoggerFactory.getLogger(MainOneRaceConditional.class);
 
     public static void main(String[] args) {
         log.info(" ");
-        MainTaskOne mainTaskOne = new MainTaskOne();
+        MainOneRaceConditional mainTaskOne = new MainOneRaceConditional();
         mainTaskOne.badRaceCondition();
     }
 

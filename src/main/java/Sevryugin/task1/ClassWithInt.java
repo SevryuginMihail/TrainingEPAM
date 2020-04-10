@@ -1,5 +1,8 @@
 package Sevryugin.task1;
 
+/**
+ * pojo класс ClassWithInt
+ */
 public class ClassWithInt {
     private int value;
 

@@ -4,12 +4,15 @@ import Sevryugin.task1.ClassWithInt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MainTaskTwo {
-    private static final Logger log = LoggerFactory.getLogger(MainTaskTwo.class);
+/**
+ * Класс, который избавился от проблеммы race conditional
+ */
+public class MainTwoRaceConditional {
+    private static final Logger log = LoggerFactory.getLogger(MainTwoRaceConditional.class);
 
     public static void main(String[] args) {
         log.info(" ");
-        MainTaskTwo mainTaskTwo = new MainTaskTwo();
+        MainTwoRaceConditional mainTaskTwo = new MainTwoRaceConditional();
         mainTaskTwo.goodRaceCondition();
     }
 
