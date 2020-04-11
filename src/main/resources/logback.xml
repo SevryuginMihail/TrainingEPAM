@@ -49,6 +49,8 @@
         <appender-ref ref="fileLog"/>
         <appender-ref ref="console"/>
     </logger>
+    <!--task3-->
+
     <root level="info">
         <appender-ref ref="console"/>
     </root>
