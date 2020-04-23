@@ -1,0 +1,10 @@
+Поиск products по title
+Поиск products по price = 9.99 и category = 8 и отсортировать по category и price
+Поиск products у которых category = 8 или 15
+Поиск products у которых price между 10 и 20 (используйте BETWEEN)
+Поиск orders у которых orderdate между 2004-01-05 и 2004-02-05
+Сгруппировать данные в orders по полю customerid и посчитать количество относительно каждого customerid
+Сгруппировать данные в orders по полям customerid и orderdate и просуммировать totalamount, при этом сумма
+totalamount должна быть больше 100
+Написать запрос к таблицам customer, orders, orderlines и products с использованием JOIN
+и вывести firstname, lastname, title, orderdate
