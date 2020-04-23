@@ -23,7 +23,7 @@ order by price;
 select *
 from orders
 where orderdate
-	between '2004-01-05' and '2004-02-05'
+    between to_date('2004-01-05', 'YYYY-MM-DD') and to_date('2004-02-05', 'YYYY-MM-DD');
 order by orderdate;
 --сгруппировать данные в orders по полю customerid и посчитать количество относительно каждого customerid
 select customerid ,count(*)
