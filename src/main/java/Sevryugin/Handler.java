@@ -20,7 +20,7 @@ public class Handler {
             case 2:{task2();break;}
             case 3:{task3();break;}
             case 4:{task4();break;}
-            case 5:{break;}
+            case 5:{task5();break;}
         }
     }
 
@@ -182,4 +182,56 @@ public class Handler {
             }
         }
     }
+
+    public static void task5(){
+        Connection con = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+            con = DriverManager
+                    .getConnection("jdbc:postgresql://localhost:5432/postgres?currentSchema=public",
+                            "pay",
+                            "pay");
+            log.info("Соединение установлено.");
+            // начало кода
+            Scanner scanner = new Scanner(System.in);
+            log.info("Введите category(int)");
+            Integer category = Integer.parseInt(scanner.nextLine());
+            log.info("Введите title(string)");
+            String title = scanner.nextLine();
+            log.info("Введите actor(string)");
+            String actor = scanner.nextLine();
+            log.info("Введите price(int)");
+            Integer price = Integer.parseInt(scanner.nextLine());
+            log.info("Введите special(int)");
+            Integer special = Integer.parseInt(scanner.nextLine());
+            log.info("Введите common_prod_id(int)");
+            Integer prod_id = Integer.parseInt(scanner.nextLine());
+            PreparedStatement addRecord = con.prepareStatement("insert into products(category, title, actor," +
+                    "price, special, common_prod_id)" +
+                    "values(?, ?, ?, ?, ?, ?);");
+            addRecord.setInt(1, category);
+            addRecord.setString(2, title);
+            addRecord.setString(3, actor);
+            addRecord.setInt(4, price);
+            addRecord.setInt(5, special);
+            addRecord.setInt(6, prod_id);
+            addRecord.execute();
+            log.info("Добавление завершено");
+            // конец кода
+        } catch (ClassNotFoundException e) {
+            log.warn(e.getMessage());
+        } catch (SQLException e) {
+            log.warn(e.getMessage());
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                    log.info("Соединение закрыто");
+                }
+            } catch (SQLException e) {
+                log.warn(e.getMessage());
+            }
+        }
+    }
+
 }
