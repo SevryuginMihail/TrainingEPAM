@@ -25,8 +25,10 @@ public class Menu {
             if(scanner.hasNextInt()){
                 task_number=scanner.nextInt();
                 log.info("Вы ввели :{}",task_number);
-                if(task_number>=0 && task_number<=valueOperations)
+                if(task_number>=0 && task_number<=valueOperations) {
                     handler.switchHandler(task_number);
+                    task_number = -1;
+                }
                 else{
                     log.info("Запроса с таким номером не существует, повторите попытку");
                 }
