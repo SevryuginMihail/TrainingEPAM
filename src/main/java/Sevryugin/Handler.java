@@ -2,9 +2,7 @@ package Sevryugin;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * Handler.
@@ -37,6 +35,19 @@ public class Handler {
                             "pay");
             log.info("Соединение установлено.");
             // тут код
+            String request1 = "select * from products";
+            PreparedStatement preparedStatement = con.prepareStatement(request1);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                log.info(String.format("%-7d|%-8d|%-19s|%-19s|%-7.2f|%-7d|%d",
+                        resultSet.getInt("prod_id"),
+                        resultSet.getInt("category"),
+                        resultSet.getString("title"),
+                        resultSet.getString("actor"),
+                        resultSet.getBigDecimal("price"),
+                        resultSet.getShort("special"),
+                        resultSet.getInt("common_prod_id")));
+            }
         } catch (ClassNotFoundException e) {
             log.warn(e.getMessage());
         } catch (SQLException e) {
